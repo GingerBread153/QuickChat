@@ -87,3 +87,9 @@ body {
     padding-bottom: 0px;
     margin-bottom: 0px;
   }
+
+  .rounded-circle {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+}

@@ -1,13 +1,24 @@
-<h1>Quickchat Messaging</h1>
+<h1 style="text-align: center;">Quickchat Messaging</h1>
+<br>
+
+
 
 <%# <p>Find me in app/views/pages/home.html.erb</p> %>
 
 <% if current_user %>
-    <%= link_to "Start Chat", rooms_path %>
-    <%= image_tag(current_user.avatar_thumbnail) %>
-    <%= button_to "Logout", destroy_user_session_path, method: :delete%>
-    <%= link_to "Edit Account", edit_user_registration_path, class: 'btn btn-secondary'%>
+
+    <div style="text-align: center;">
+        <%= image_tag(current_user.avatar_thumbnail, class: 'rounded-circle', alt:"")%>
+        <br><br>
+        <%= link_to "Start Chat", rooms_path, class: 'btn btn-primary' %>
+        <br><br>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-danger'%>
+        <br>
+        <%= link_to "Edit Account", edit_user_registration_path, class: 'btn btn-warning'%>
+    </div>
 <% else %>
-    <%= link_to "Login", new_user_session_path %>
-    <%= link_to "Sign Up", new_user_registration_path%>
+    <div style="text-align: center;">
+        <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success" %>
+    </div>
 <% end %>
